@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>投稿一覧</title>
+  </head>
+  <body>
+    <h1>投稿一覧</h1>
+    <ul>
+      <! -- %以下のコードはJinja2のループ構文で、Flaskから渡されたpostsリストに入っている内容をひとつずつ取り出して順番に表示する-->
+      {% for post in posts %}
+      <li>{{ post.title }} - {{ post.content }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

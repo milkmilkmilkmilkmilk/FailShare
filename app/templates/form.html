@@ -1,0 +1,22 @@
+# このファイルが何処にあるかを示す文
+<! -- app/templates/form.html -->
+<html>
+  <head>
+    <title>投稿フォーム</title>
+  </head>
+  <body>
+    <h1>新しい投稿を表示</h1>
+    <form method="post">
+      <label for="title">タイトル:</label><br />
+      <input type="text" id="title" name="title" /><br /><br />
+
+      <label for="content">contents:</label><br />
+
+      # textareaはinputと違って行数自由。
+      <textarea id="content" name="content"></textarea><br /><br />
+
+      <input type="submit" value="投稿する" />
+    </form>
+    <p><a href="{{ url_for('main.index') }}">投稿一覧に戻る</a></p>
+  </body>
+</html>
