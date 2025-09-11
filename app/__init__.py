@@ -32,6 +32,8 @@ def create_app():
     # Initialize extensions
     from .extensions import db, migrate
     db.init_app(app)
+    # Ensure models are imported so Flask-Migrate can detect them
+    from . import models  # noqa: F401
     migrate.init_app(app, db)
 
     # 作成したアプリ本体を返す。  
