@@ -29,5 +29,10 @@ def create_app():
     # Dynamically set the database URI
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, "app.db")
 
+    # Initialize extensions
+    from .extensions import db, migrate
+    db.init_app(app)
+    migrate.init_app(app, db)
+
     # 作成したアプリ本体を返す。  
     return app
